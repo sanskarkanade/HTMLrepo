@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+}
+
+.navbar{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+
+.box2{
+   width: 500px;
+   display: flex;
+   justify-content: flex-end;
+}
+
+
+
+.nav-drop{
+    margin-left: 50px;
+    width: 900px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.signup{
+    margin-right: 40px;
+    padding-top: 10px;
+}
+
+.color:hover{
+    color: blue;
+}
+
+.login{
+    margin-right: 40px;
+    padding-top: 10px;
+}
+
+.get{
+    margin-right: 40px;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    font-size: 1rem;
+    border: 2px solid blue;
+    border-radius: 0.7rem;
+}
+
+.get:hover{
+    background-color: rgb(51, 51, 182);
+}
+
