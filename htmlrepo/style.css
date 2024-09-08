@@ -10,6 +10,7 @@
     padding-bottom: 16px;
     padding-left: 24px;
     padding-right: 24px;
+    position: sticky;
 }
 
 
@@ -56,3 +57,53 @@
     background-color: rgb(51, 51, 182);
 }
 
+
+.bigbox{
+    height: 500px;
+    display: flex;
+    background-color: rgb(53, 44, 44);
+}
+
+.onebox{
+    background-color: rgb(53, 44, 44);
+    color: white;
+    padding: 48px;
+}
+
+.bigtext{
+    font-size: 40px;
+}
+
+.smalltext{
+    font-size: 16px;
+}
+
+.buttons{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.try{
+   font-size: 1.2rem;
+   width: 150px;
+   height: 50px;
+   color: black;
+   background-color: rgb(34, 53, 223);
+   display: flex;
+   align-items: center;
+   border-radius: 10%;
+   padding: 10px;
+}
+
+.purchas{
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.secbox{
+    width: 1300px;
+    background-color: rgb(31, 26, 26);
+    padding: 48px;
+}
