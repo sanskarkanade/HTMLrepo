@@ -4,13 +4,15 @@
 
 .navbar{
     height: 40px;
+    width: 1300px;
     display: flex;
     align-items: center;
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 24px;
     padding-right: 24px;
-    position: sticky;
+    position: fixed;
+    background-color: white;
 }
 
 
@@ -62,6 +64,7 @@
     height: 500px;
     display: flex;
     background-color: rgb(53, 44, 44);
+    padding-top: 50px;
 }
 
 .onebox{
@@ -93,7 +96,7 @@
    background-color: rgb(34, 53, 223);
    display: flex;
    align-items: center;
-   border-radius: 10%;
+   border-radius: 10px;
    padding: 10px;
 }
 
@@ -114,7 +117,7 @@
     padding-bottom: 72px;
     padding-left: 105px;
     padding-right: 105px;
-    background-color:rgba(121, 121, 91, 0.514);
+    background-color:rgba(230, 230, 224, 0.514);
     text-align: center;
 }
 
@@ -141,4 +144,79 @@
 
 input{
     margin-left: 15px;
+}
+
+
+.obox{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.one{
+    height: 650px;
+    background-color:rgba(230, 230, 224, 0.514) ;
+    text-align: left;
+    width: 400px;
+    border-radius: 10px;
+    padding-left: 40px;
+    margin-left: 10px;
+}
+
+.up{
+    height: 250px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+.element1{
+    color: rgba(85, 68, 68, 0.753);
+}
+
+.element2{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.element3{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.free{
+    background-color: blue;
+    padding-left: 24px; 
+    padding-right: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 400;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.buy{
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
+.two{
+    height: 650px;
+    background-color:rgba(230, 230, 224, 0.514) ;
+    text-align: left; 
+    width: 400px;
+    border-radius: 10px;
+    padding-left: 40px;
+    margin-left: 10px;
+}
+
+.three{
+    height: 650px;
+    background-color:rgba(230, 230, 224, 0.514) ;
+    text-align: left;
+    width: 400px;
+    border-radius: 10px;
+    padding-left: 40px;
+    margin-left: 10px;
 }
