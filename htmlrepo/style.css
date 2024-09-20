@@ -150,6 +150,7 @@ input{
 .obox{
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 70px;
 }
 
 .one{
@@ -220,3 +221,23 @@ input{
     padding-left: 40px;
     margin-left: 10px;
 }
+
+
+.foot{
+    height: 600px;
+    background-color: black;
+    color: white;
+    display: flex;
+    padding-top: 90px;
+    
+}
+
+.fdrop{
+    font-size: 1.5rem;
+}
+
+
+.fone{
+    margin-left: 110px;
+}
+
