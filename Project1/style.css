@@ -111,6 +111,11 @@ i{
    padding: 10px;
 }
 
+.firsti{
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
 .try:hover{
     color: black;
     background-color: rgb(51, 51, 182);
@@ -119,6 +124,14 @@ i{
 .purchas{
     text-decoration: underline;
     font-weight: 500;
+    height: 30px;
+    padding-bottom: 10px;
+    display: flex;
+}
+
+.secondi{
+    margin-left: 15px;
+    
 }
 
 .secbox{
@@ -211,6 +224,12 @@ input{
     font-weight: 400;
     width: 180px;
     border-radius: 10px;
+    display: flex;
+}
+
+.thirdi{
+    margin-left: 15px;
+    margin-bottom: 0px;
 }
 
 .free:hover{
