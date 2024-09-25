@@ -113,7 +113,6 @@ i{
 
 .firsti{
     margin-left: 15px;
-    margin-bottom: 5px;
 }
 
 .try:hover{
@@ -127,11 +126,18 @@ i{
     height: 30px;
     padding-bottom: 10px;
     display: flex;
+    align-items: center;
+}
+
+.purchas:hover{
+    text-decoration-thickness: 1.5px;
+    @keyframes Animation1 {
+        from()
+    }
 }
 
 .secondi{
     margin-left: 15px;
-    
 }
 
 .secbox{
@@ -225,11 +231,11 @@ input{
     width: 180px;
     border-radius: 10px;
     display: flex;
+    align-items: center;
 }
 
 .thirdi{
     margin-left: 15px;
-    margin-bottom: 0px;
 }
 
 .free:hover{
