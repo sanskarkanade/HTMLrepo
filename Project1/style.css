@@ -113,6 +113,7 @@ i{
 
 .firsti{
     margin-left: 15px;
+    transition: all 0.3s ease-in;
 }
 
 .try:hover{
@@ -120,10 +121,15 @@ i{
     background-color: rgb(51, 51, 182);
 }
 
+.try:hover .firsti{
+    transform: translate(5px);
+}
+
 .purchas{
     text-decoration: underline;
     font-weight: 500;
     height: 30px;
+    width: 190px;
     padding-bottom: 10px;
     display: flex;
     align-items: center;
@@ -131,19 +137,25 @@ i{
 
 .purchas:hover{
     text-decoration-thickness: 1.5px;
-    @keyframes Animation1 {
-        from()
-    }
+}
+
+.purchas:hover .secondi{
+    transform: translate(5px);
 }
 
 .secondi{
     margin-left: 15px;
+    transition: all 0.3s ease-in;
 }
 
 .secbox{
     width: 1300px;
     background-color: rgb(31, 26, 26);
     padding: 48px;
+}
+
+.video{
+    width: 100%;
 }
 
 
@@ -236,11 +248,16 @@ input{
 
 .thirdi{
     margin-left: 15px;
+    transition: all 0.3s ease-in;
 }
 
 .free:hover{
     color: white;
     background-color: rgb(51, 51, 182);
+}
+
+.free:hover .thirdi{
+    transform: translate(5px); 
 }
 
 .buy{
@@ -287,3 +304,11 @@ input{
     margin-left: 110px;
 }
 
+
+.fone p:hover{
+    text-decoration: underline;
+}
+
+.fdrop:hover{
+    text-decoration: none;
+}
