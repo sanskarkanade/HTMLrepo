@@ -1,0 +1,96 @@
+*{
+    margin: 0px;
+    color: white;
+}
+
+
+body{
+    background-color: black;
+}
+
+.navbar{
+    height: 120px;
+    display: flex;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+
+.nav-img{
+    width: 1000px;
+    font-size: 2.3rem;
+    color: red;
+}
+
+.twobox{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.english{ 
+    height: 20px;
+    width: 80px;
+    padding: 10px;
+    border: 1px solid white;
+    text-align: center;
+    background-color: rgb(36, 31, 31);
+}
+
+.signin{
+    margin-left: 20px;
+    height: 20px;
+    width: 80px;
+    padding: 10px;
+    background-color: red;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.head{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.unlimited{
+    font-size: 3.5rem;
+    width: 500px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.start{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ready{
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.two-div{
+    display: flex;
+    justify-content: center;
+}
+
+.email{
+    height: 50px;
+    width: 290px;
+    background-color: rgb(36, 31, 31);
+    border: 1px solid rgb(119, 111, 111);
+    border-radius: 5px;
+}
+
+.get{
+    width: 180px;
+    padding: 10px;
+    background-color: red;
+    margin-left: 15px;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 5px;
+}
