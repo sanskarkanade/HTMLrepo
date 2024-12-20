@@ -55,9 +55,35 @@ h1{
 
 .showtodo{
     background-color: rgb(56, 45, 45);
-    height: 200px;
-    width: 550px;
     margin-top: 50px;
     border: none;
     border-radius: 10px;
+}
+
+.eachtodo{
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    color: white;
+    display: flex;
+    max-width: 500px;
+}
+
+#todo{
+    zoom: 1.5;
+    margin-right: 5px;
+}
+
+.dbtn{
+    margin-left: auto;
+    padding: 10px;
+    font-size: 20px;
+    background-color: red;
+    color: greenyellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
