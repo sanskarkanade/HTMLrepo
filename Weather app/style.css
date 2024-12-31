@@ -66,3 +66,17 @@ select{
     justify-content: space-evenly;
     height: 150px;
 }
+
+.forecast-container{
+    height: 350px;
+    background-color: chocolate;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.days{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
