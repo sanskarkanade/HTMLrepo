@@ -1,12 +1,19 @@
 *{
     margin: 0;
     padding: 0;
+    color: #333333;
+}
+
+h1{
+    text-align: center;
+    background-color: #FFCC99;
+    color: #ffffff;
 }
 
 .main-container{
     display: flex;
     justify-content: center;
-    background-color: aquamarine;
+    background-color: #ADD8E6;
 }
 
 .container{
@@ -20,13 +27,36 @@
     font-size: 30px;
 }
 
+input{
+    border: none;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+    background-color: rgba(127, 127, 238, 0.589);
+    color: white;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
 .location{
     height: 100px;
 }
 
 select{
-    font-size: 30px;
+    font-size: 20px;
     border: none;
+    background-color: rgba(127, 127, 238, 0.589);
+    border-radius: 5px;
+}
+
+button{
+    background-color:  rgb(81, 81, 156);
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    border: solid 2px blue;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .lat-lon{
@@ -59,17 +89,19 @@ select{
     display: flex;
     justify-content: space-evenly;
     height: 150px;
+    text-align: center;
 }
 
 .sun{
     display: flex;
     justify-content: space-evenly;
     height: 150px;
+    text-align: center;
 }
 
 .forecast-container{
     height: 350px;
-    background-color: chocolate;
+    background-color: #ADD8E6;
     font-size: 30px;
     display: flex;
     justify-content: space-evenly;
@@ -79,4 +111,5 @@ select{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
 }
