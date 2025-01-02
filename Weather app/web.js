@@ -32,7 +32,7 @@ button.addEventListener("click", async () => {
 
 
     if (cityname && cityname.trim() !== "" && statename && statename !== "select") {
-        let apikey = "0665e3d4055503c63ffe20b4f3f8e59a";
+        
         try {
             let coordinte = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statename},india&appid=${apikey}`);
             let data = await coordinte.json();
