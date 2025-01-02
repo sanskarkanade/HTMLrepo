@@ -35,3 +35,34 @@ const indianStatesAndUTs = {
     "Jammu and Kashmir": "JK",
     "Ladakh": "LA"
 };
+
+const indianCities = [
+    // North India
+    "Delhi", "Jaipur", "Chandigarh", "Lucknow", "Amritsar", 
+    "Srinagar", "Shimla", "Dehradun", "Varanasi", "Agra",
+    
+    // West India
+    "Mumbai", "Pune", "Ahmedabad", "Surat", "Jaipur", 
+    "Udaipur", "Jodhpur", "Bhopal", "Indore", "Nagpur",
+    
+    // East India
+    "Kolkata", "Bhubaneswar", "Ranchi", "Patna", "Guwahati", 
+    "Durgapur", "Siliguri", "Jamshedpur", "Imphal", "Agartala",
+    
+    // South India
+    "Bengaluru", "Chennai", "Hyderabad", "Kochi", 
+    "Thiruvananthapuram", "Visakhapatnam", "Vijayawada", 
+    "Mysore", "Coimbatore", "Mangalore",
+    
+    // Central India
+    "Bhopal", "Indore", "Jabalpur", "Raipur", 
+    "Gwalior", "Ujjain", "Bilaspur",
+    
+    // Northeast India
+    "Guwahati", "Shillong", "Gangtok", "Kohima", 
+    "Imphal", "Aizawl", "Itanagar",
+    
+    // Union Territories
+    "New Delhi", "Chandigarh", "Srinagar", 
+    "Jammu", "Puducherry", "Port Blair", "Kavaratti"
+];
