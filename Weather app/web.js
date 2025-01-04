@@ -1,3 +1,5 @@
+import { apikey } from "./code";
+
 let select = document.querySelector("#state");
 let selectcity = document.querySelector("#city");
 let button = document.querySelector("button");
