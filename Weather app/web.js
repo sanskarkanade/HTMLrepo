@@ -1,4 +1,4 @@
-import { apikey } from "./code";
+import { apikey } from "./code.js";
 
 let select = document.querySelector("#state");
 let selectcity = document.querySelector("#city");
