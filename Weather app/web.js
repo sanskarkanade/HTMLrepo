@@ -17,7 +17,6 @@ for (let state in indianStatesAndUTs) {
     select.append(newoption);
 }
 
-
 for (let city of indianCities) {
     let newoption = document.createElement("option");
     newoption.innerText = city;
@@ -36,20 +35,38 @@ button.addEventListener("click", async () => {
         statename = select.value;
     }
 
-
     if (cityname && cityname.trim() !== "" && statename && statename !== "select") {
-        
+
         try {
             let coordinte = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statename},india&appid=${apikey}`);
             let coordi_data = await coordinte.json();
-            let latitude = coordi_data["0"]["lat"];
-            let longitude = coordi_data["0"]["lon"];
-            setlonlat(latitude, longitude);
+            let latitude = coordi_data[0]["lat"];
+            let longitude = coordi_data[0]["lon"];
 
             let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`);
             let wea_data = await weather.json();
 
-            let description = wea_data["weather"]["0"]["description"];
+            let icon = wea_data.weather[0].icon;
+            let newsrc = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+            let img = document.querySelector("img");
+            img.src = newsrc;
+
+
+            img.style.opacity = "0"; 
+            let opacity = 0;
+            img.onload = () => {
+                let fadeIn = setInterval(() => {
+                    if (opacity < 1) {
+                        opacity += 0.05; 
+                        img.style.opacity = opacity;
+                    } else {
+                        clearInterval(fadeIn); 
+                    }
+                }, 50); 
+            };
+
+
+            let description = wea_data["weather"][0]["description"];
 
             let humidity = wea_data["main"]["humidity"];
 
@@ -64,47 +81,49 @@ button.addEventListener("click", async () => {
             let rise_u = wea_data["sys"]["sunrise"];
             let sunrise = convertunix(rise_u);
 
-            //console.log(description,humidity,temp_c,windspeed,sunrise,sunset);
+            let forecast = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apikey}`);
+            let fore_data = await forecast.json();
 
-            setcurrentdata(description,humidity,temp_c,windspeed,sunrise,sunset);
+            // Set forecast data for 4 intervals
+            let forecasts = fore_data.list.slice(0, 4);
+            forecasts.forEach((forecast, index) => {
+                document.querySelector(`#main${index + 1}`).innerHTML = `<p>Weather<br>${forecast.weather[0].description}<p>`;
+                document.querySelector(`#temp${index + 1}`).innerHTML = `<p>Temperature<br>${tempconvert(forecast.main.temp)} C<p>`;
+                document.querySelector(`#wisp${index + 1}`).innerHTML = `<p>Windspeed<br>${forecast.wind.speed} m/s<p>`;
+            });
 
-        }
-        catch {
+            setcurrentdata(description, humidity, temp_c, windspeed, sunrise, sunset);
+            setlonlat(latitude, longitude);
+
+        } catch (error) {
+            console.error("Error fetching data:", error);
             alert("City name and state name mismatched.");
         }
-    }
-    else {
+    } else {
         alert("City name or state name not selected.");
     }
-
-
 });
 
 let setlonlat = (latitude, longitude) => {
     points.innerHTML = `<p>Latitude = ${latitude}<br>Longitude = ${longitude}`;
-}
+};
 
-let setcurrentdata = (description,humidity,temp_c,windspeed,sunrise,sunset) => {
+let setcurrentdata = (description, humidity, temp_c, windspeed, sunrise, sunset) => {
     weather.innerHTML = `<p>Weather <br>${description}<p>`;
     humid.innerHTML = `<p>Humidity <br>${humidity} %<p>`;
     temperature.innerHTML = `<p>Temperature <br>${temp_c} C<p>`;
     speed.innerHTML = `<p>Wind speed <br>${windspeed} m/s<p>`;
     rise.innerHTML = `<p>Sunrise <br>${sunrise}<p>`;
     set.innerHTML = `<p>Sunset <br>${sunset}<p>`;
-}
-
+};
 
 let tempconvert = (kelvin) => {
     return (kelvin - 273.15).toFixed(2);
-}
+};
 
 let convertunix = (unix) => {
-
-let dateUTC = new Date(unix * 1000); 
-
-let istOffset = 5.5 * 60 * 60 * 1000; 
-let dateIST = new Date(dateUTC.getTime() + istOffset);
-
-return dateIST.toLocaleString("en-IN"); 
-
-}
+    let dateUTC = new Date(unix * 1000);
+    let istOffset = 5.5 * 60 * 60 * 1000;
+    let dateIST = new Date(dateUTC.getTime() + istOffset);
+    return dateIST.toLocaleString("en-IN");
+};

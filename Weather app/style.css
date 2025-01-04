@@ -73,11 +73,10 @@ button{
     align-items: center;
 }
 
-.weather-img{
+
+img{
     height: 300px;
     width: 300px;
-    background-image: url("weather-icon.jpg");
-    background-size: cover;
 }
 
 .weather-data{
@@ -100,7 +99,7 @@ button{
 }
 
 .forecast-container{
-    height: 350px;
+    height: 450px;
     background-color: #ADD8E6;
     font-size: 30px;
     display: flex;
