@@ -40,7 +40,7 @@ button.addEventListener("click", async () => {
 
     if (cityname && cityname.trim() !== "" && statename && statename !== "select") {
 
-        
+        try {
             let coordinte = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statename},india&appid=${apikey}`);
             let coordi_data = await coordinte.json();
             let latitude = coordi_data[0]["lat"];
@@ -98,7 +98,10 @@ button.addEventListener("click", async () => {
             setcurrentdata(description, humidity, temp_c, windspeed, sunrise, sunset);
             setlonlat(latitude, longitude);
 
-        
+        } catch (error) {
+            console.error("Error fetching data:", error);
+            alert("City name and state name mismatched.");
+        }
     } else {
         alert("City name or state name not selected.");
     }
