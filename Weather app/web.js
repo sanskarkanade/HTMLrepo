@@ -1,5 +1,3 @@
-import { apikey } from "./code.js";
-
 let select = document.querySelector("#state");
 let selectcity = document.querySelector("#city");
 let button = document.querySelector("button");
@@ -10,6 +8,9 @@ let humid = document.querySelector(".humidity");
 let speed = document.querySelector(".windspeed");
 let rise = document.querySelector(".sunrise");
 let set = document.querySelector(".sunset");
+
+
+let apikey = "0665e3d4055503c63ffe20b4f3f8e59a";
 
 
 for (let state in indianStatesAndUTs) {
