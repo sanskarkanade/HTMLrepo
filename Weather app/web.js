@@ -41,7 +41,7 @@ button.addEventListener("click", async () => {
     if (cityname && cityname.trim() !== "" && statename && statename !== "select") {
 
         try {
-            let coordinte = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statename},india&appid=${apikey}`);
+            let coordinte = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statename},india&appid=${apikey}`);
             let coordi_data = await coordinte.json();
             let latitude = coordi_data[0]["lat"];
             let longitude = coordi_data[0]["lon"];
