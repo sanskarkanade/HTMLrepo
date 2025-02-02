@@ -1,7 +1,22 @@
+// function getLocation() {
+//     if ("geolocation" in navigator) {
+//         navigator.geolocation.getCurrentPosition(
+//             (position) => {
+//                 const { latitude, longitude } = position.coords;
+//             },
+//             (error) => {
+                
+//             }
+//         );
+//     } else {
+//         output.innerText = "Geolocation API is not supported in this browser.";
+//     }
+// }
+
 let select = document.querySelector("#state");
 let select2 = document.querySelector("#country");
 let selectcity = document.querySelector("#city");
-let button = document.querySelector("#btn");
+let button1 = document.querySelector("#btn");
 let points = document.querySelector(".lat-lon");
 let weather = document.querySelector(".main");
 let temperature = document.querySelector(".temperature");
@@ -13,107 +28,26 @@ let aqi = document.querySelector(".aqi");
 
 
 
-
 let apikey = "0665e3d4055503c63ffe20b4f3f8e59a";
 
-// for (let country in countries) {
-//     let newoption = document.createElement("option");
-//     newoption.innerText = country;
-//     newoption.value = country;
-//     select2.append(newoption);
-// }
-// let temp = select2.value;
-
-// for (let state in indianStatesAndUTs) {
-//     let newoption = document.createElement("option");
-//     newoption.innerText = state[temp];
-//     newoption.value = state[temp];
-//     select.append(newoption);
-// }
-
-Object.keys(countriesAndStates).forEach(country => {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    select2.append(option);
+button1.addEventListener("click",  () => {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+               let { latitude, longitude } = position.coords;
+               feature(latitude,longitude);
+            },
+            (error) => {
+                console.log(error);
+            }
+        );
+    } else {
+        output.innerText = "Geolocation API is not supported in this browser.";
+    }
+    
 });
-
-// Function to restore saved selections
-function restoreSelections() {
-    const savedCountry = localStorage.getItem("selectedCountry");
-    const savedState = localStorage.getItem("selectedState");
-
-    if (savedCountry) {
-        select2.value = savedCountry;
-        populateStates(savedCountry);
-
-        if (savedState) {
-            select.value = savedState;
-        }
-    }
-}
-
-// Populate the state dropdown based on the selected country
-function populateStates(selectedCountry) {
-    select.innerHTML = "<option value=''>Select State</option>";
-    if (selectedCountry && countriesAndStates[selectedCountry]) {
-        const states = countriesAndStates[selectedCountry];
-        states.forEach(state => {
-            const option = document.createElement("option");
-            option.value = state;
-            option.textContent = state;
-            select.append(option);
-        });
-    }
-}
-
-// Event listener for when a country is selected
-select2.addEventListener("change", function () {
-    const selectedCountry = select2.value;
-    localStorage.setItem("selectedCountry", selectedCountry); // Save the country selection
-    populateStates(selectedCountry);
-
-    // Clear the state selection in localStorage
-    localStorage.removeItem("selectedState");
-});
-
-// Event listener for when a state is selected
-select.addEventListener("change", function () {
-    const selectedState = select.value;
-    localStorage.setItem("selectedState", selectedState); // Save the state selection
-});
-
-// Restore selections when the page loads
-restoreSelections();
-
-
-
-
-button.addEventListener("click", async () => {
-    let cityname;
-    let statename;
-    let Countryname;
-    if (selectcity.value != "") {
-        cityname = selectcity.value;
-    }
-
-    if (select.value != "select") {
-        statename = select.value;
-    }
-
-    if (select2.value != "select") {
-        Countryname = select2.value;
-    }
-
-    if (cityname && cityname.trim() !== "" && statename && statename !== "select" && Countryname && Countryname !== "select") {
-
+let feature = async(latitude,longitude) => {
         try {
-            let coordinte = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityname},${statename},${Countryname}&appid=${apikey}`);
-            let coordi_data = await coordinte.json();
-            let latitude = coordi_data[0]["lat"];
-            let longitude = coordi_data[0]["lon"];
-            
-
             let weather = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apikey}`);
             let wea_data = await weather.json();
 
@@ -185,11 +119,8 @@ button.addEventListener("click", async () => {
             console.error("Error fetching data:", error);
             alert("City name and state name mismatched.");
         }
-    } 
-    else {
-        alert("City name or state name not selected.");
-    }
-});
+    
+};
 
 let setlonlat = (latitude, longitude) => {
     points.innerHTML = `<p>Latitude = ${latitude}<br>Longitude = ${longitude}</p>`;
@@ -370,5 +301,4 @@ let avalue = (element) => {
         newDiv.innerText = "Very unhealthy to hazardous. Stay indoors with air filtration.";
     }
 };
-
 

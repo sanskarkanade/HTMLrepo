@@ -1,114 +1,153 @@
-*{
+/* Global Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
     color: #333333;
 }
 
-h1{
-    text-align: center;
-    background-color: #FFCC99;
-    color: #ffffff;
+body {
+    background-color: #f0f8ff;
+    padding: 20px;
 }
 
-.main-container{
+h1 {
+    text-align: center;
+    background-color: #FF8C00;
+    color: #ffffff;
+    padding: 20px 0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.main-container {
     display: flex;
     justify-content: center;
-    background-color: #ADD8E6;
+    padding: 20px;
 }
 
-.container{
-    /* height: 700px; */
-    width: 500px;
-    padding-top: 100px;
-}
-
-.input-container{
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 30px;
 }
 
-input{
-    border: none;
-    height: 30px;
-    width: 250px;
-    border-radius: 5px;
-    background-color: rgba(127, 127, 238, 0.589);
+.input-container {
+    margin-bottom: 20px;
+}
+
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+input:focus, select:focus {
+    background-color: #e0f7fa;
+    outline: none;
+}
+
+button {
+    background-color: #4CAF50;
     color: white;
-    padding-left: 10px;
-    font-size: 20px;
-}
-
-.location{
-    height: 100px;
-}
-
-select{
-    font-size: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
     border: none;
-    background-color: rgba(127, 127, 238, 0.589);
-    border-radius: 5px;
-}
-
-button{
-    background-color:  rgb(81, 81, 156);
-    color: white;
-    padding: 10px;
-    font-size: 20px;
-    border: solid 2px blue;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.lat-lon{
-    text-align: center;
-    font-size: 30px;
-    text-wrap: wrap;
+button:hover {
+    background-color: #388e3c;
 }
 
-.weather{
-    /* height: 700px; */
-    width: 842px;
+.lat-lon, .live-location {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.weather {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
+img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-img{
+.weather-data {
+    width: 600px;
+    margin-left: 40px;
+    font-size: 24px;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    /* width: 90%; */
+    text-align: center;
+}
+
+.no-sun, .sun {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.forecast-container {
+    background-color: #90caf9;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.days {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    text-align: center;
     height: 300px;
-    width: 300px;
-}
-
-.weather-data{
-    font-size: 30px;
-    width: 671px;
-}
-
-.no-sun{
-    display: flex;
-    justify-content: space-evenly;
-    height: 150px;
-    text-align: center;
-}
-
-.sun{
-    display: flex;
-    justify-content: space-evenly;
-    height: 150px;
-    text-align: center;
-}
-
-.forecast-container{
-    height: 450px;
-    background-color: #ADD8E6;
-    font-size: 30px;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.days{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
+    justify-content: space-between;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container, .forecast-container {
+        padding: 15px;
+    }
+
+    input, select, button {
+        width: 100%;
+    }
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .days {
+        width: 100%;
+    }
 }

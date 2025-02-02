@@ -1,68 +1,76 @@
-const indianStatesAndUTs = {
-    "Andhra Pradesh": "AP",
-    "Arunachal Pradesh": "AR",
-    "Assam": "AS",
-    "Bihar": "BR",
-    "Chhattisgarh": "CT",
-    "Goa": "GA",
-    "Gujarat": "GJ",
-    "Haryana": "HR",
-    "Himachal Pradesh": "HP",
-    "Jharkhand": "JH",
-    "Karnataka": "KA",
-    "Kerala": "KL",
-    "Madhya Pradesh": "MP",
-    "Maharashtra": "MH",
-    "Manipur": "MN",
-    "Meghalaya": "ML",
-    "Mizoram": "MZ",
-    "Nagaland": "NL",
-    "Odisha": "OR",
-    "Punjab": "PB",
-    "Rajasthan": "RJ",
-    "Sikkim": "SK",
-    "Tamil Nadu": "TN",
-    "Telangana": "TG",
-    "Tripura": "TR",
-    "Uttar Pradesh": "UP",
-    "Uttarakhand": "UT",
-    "West Bengal": "WB",
-    "Andaman and Nicobar Islands": "AN",
-    "Chandigarh": "CH",
-    "Delhi": "DL",
-    "Lakshadweep": "LD",
-    "Puducherry": "PY",
-    "Jammu and Kashmir": "JK",
-    "Ladakh": "LA"
+const countriesAndStates = {
+    "India": [
+        "Andhra Pradesh", "Bihar", "Delhi", "Gujarat", "Haryana",
+        "Karnataka", "Maharashtra", "Punjab", "Rajasthan", "Uttar Pradesh"
+    ],
+    "United States": [
+        "California", "Texas", "Florida", "New York", "Illinois",
+        "Pennsylvania", "Ohio", "Georgia", "North Carolina", "Michigan"
+    ],
+    "Brazil": [
+        "São Paulo", "Rio de Janeiro", "Minas Gerais", "Bahia", "Paraná",
+        "Rio Grande do Sul", "Pernambuco", "Ceará", "Amazonas", "Espírito Santo"
+    ],
+    "Canada": [
+        "Ontario", "Quebec", "British Columbia", "Alberta", "Manitoba",
+        "Saskatchewan", "Nova Scotia", "New Brunswick", "Newfoundland and Labrador", "Prince Edward Island"
+    ],
+    "Russia": [
+        "Moscow", "Saint Petersburg", "Sverdlovsk", "Chelyabinsk", "Krasnoyarsk",
+        "Tatarstan", "Bashkortostan", "Perm Krai", "Sakha (Yakutia)", "Kaluga"
+    ],
+    "China": [
+        "Beijing", "Shanghai", "Guangdong", "Jiangsu", "Shandong",
+        "Sichuan", "Hunan", "Zhejiang", "Henan", "Hebei"
+    ],
+    "Australia": [
+        "New South Wales", "Queensland", "Victoria", "Western Australia", "South Australia",
+        "Tasmania", "Australian Capital Territory", "Northern Territory"
+    ],
+    "France": [
+        "Île-de-France", "Provence-Alpes-Côte d'Azur", "Auvergne-Rhône-Alpes", "Normandy", "Brittany",
+        "Occitanie", "Nouvelle-Aquitaine", "Grand Est", "Hauts-de-France", "Bourgogne-Franche-Comté"
+    ],
+    "Germany": [
+        "Bavaria", "North Rhine-Westphalia", "Baden-Württemberg", "Hesse", "Saxony",
+        "Lower Saxony", "Rhineland-Palatinate", "Schleswig-Holstein", "Brandenburg", "Saarland"
+    ],
+    "United Kingdom": [
+        "England", "Scotland", "Wales", "Northern Ireland"
+    ],
+    "Japan": [
+        "Tokyo", "Osaka", "Hokkaido", "Kyoto", "Fukuoka",
+        "Aichi", "Kanagawa", "Hyogo", "Okinawa", "Chiba"
+    ]
 };
 
-const indianCities = [
-    // North India
-    "Delhi", "Jaipur", "Chandigarh", "Lucknow", "Amritsar", 
-    "Srinagar", "Shimla", "Dehradun", "Varanasi", "Agra",
-    
-    // West India
-    "Mumbai", "Pune", "Ahmedabad", "Surat", "Jaipur", 
-    "Udaipur", "Jodhpur", "Bhopal", "Indore", "Nagpur",
-    
-    // East India
-    "Kolkata", "Bhubaneswar", "Ranchi", "Patna", "Guwahati", 
-    "Durgapur", "Siliguri", "Jamshedpur", "Imphal", "Agartala",
-    
-    // South India
-    "Bengaluru", "Chennai", "Hyderabad", "Kochi", 
-    "Thiruvananthapuram", "Visakhapatnam", "Vijayawada", 
-    "Mysore", "Coimbatore", "Mangalore",
-    
-    // Central India
-    "Bhopal", "Indore", "Jabalpur", "Raipur", 
-    "Gwalior", "Ujjain", "Bilaspur",
-    
-    // Northeast India
-    "Guwahati", "Shillong", "Gangtok", "Kohima", 
-    "Imphal", "Aizawl", "Itanagar",
-    
-    // Union Territories
-    "New Delhi", "Chandigarh", "Srinagar", 
-    "Jammu", "Puducherry", "Port Blair", "Kavaratti"
-];
+// Get references to the select elements
+// const countrySelect = document.querySelector("#country");
+// const stateSelect = document.querySelector("#state");
+
+// // Populate the country dropdown
+// Object.keys(countriesAndStates).forEach(country => {
+//     const option = document.createElement("option");
+//     option.value = country;
+//     option.textContent = country;
+//     countrySelect.append(option);
+// });
+
+// // Event listener for when a country is selected
+// countrySelect.addEventListener("change", function () {
+//     const selectedCountry = countrySelect.value;
+
+//     // Clear existing state options
+//     stateSelect.innerHTML = "<option value=''>Select State</option>";
+
+//     // If a valid country is selected, populate the state dropdown
+//     if (selectedCountry && countriesAndStates[selectedCountry]) {
+//         const states = countriesAndStates[selectedCountry];
+//         states.forEach(state => {
+//             const option = document.createElement("option");
+//             option.value = state;
+//             option.textContent = state;
+//             stateSelect.append(option);
+//         });
+//     }
+// });
