@@ -286,11 +286,20 @@ let creatdiv = () => {
     newDiv.style.position = "fixed";
     newDiv.style.top = "50%";
     newDiv.style.left = "50%";
-    newDiv.style.transform = "translate(-50%, -50%)";
+    newDiv.style.transform = "translate(-50%, -50%) scale(0.5)";
     newDiv.style.backgroundColor = "lightblue";
     newDiv.style.padding = "20px";
-    newDiv.style.border = "2px solid black";
+    newDiv.style.border = "2px solid lightblue";
+    newDiv.style.borderRadius = "10px";
     newDiv.style.textAlign = "center";
+    newDiv.style.opacity = "0"; 
+    newDiv.style.transition = "transform 2s, opacity 2s";
+
+    setTimeout(() => {
+        newDiv.style.transform = "translate(-50%, -50%) scale(1)";
+        newDiv.style.opacity = "1"; 
+      }, 100);
+
     document.body.appendChild(newDiv);
 
 };
@@ -316,6 +325,8 @@ let wvalue = (element) => {
         newDiv.innerText = "Smoky weather. Avoid outdoor activities and stay indoors with air filtration if possible.";
     } else if (element.includes("haze")) {
         newDiv.innerText = "Hazy conditions. Visibility is poor, stay indoors or limit outdoor exposure.";
+    } else {
+        newDiv.innerText = "Unknown Weather condition.";
     }
 }
 
@@ -328,6 +339,8 @@ let hvalue = (element) => {
         newDiv.innerText = "Comfortable humidity level. Enjoy your activities outdoors.";
     } else if (element <= 85) {
         newDiv.innerText = "It's getting a bit humid. Consider staying in cooler places or using fans.";
+    } else {
+        newDiv.innerText = "Unknown Humid Condition.";
     }
 };
 
@@ -342,6 +355,8 @@ let tvalue = (element) => {
         newDiv.innerText = "Mild and comfortable. Ideal for outdoor activities.";
     } else if (element <= 40) {
         newDiv.innerText = "Hot temperatures. Stay hydrated, wear light clothing, and limit outdoor exposure.";
+    } else {
+        newDiv.innerText = "Unknown temperature Condition.";
     }
 };
 
@@ -354,6 +369,8 @@ let svalue = (element) => {
         newDiv.innerText = "Moderate winds. May affect some outdoor activities, but still manageable.";
     } else if (element <= 15) {
         newDiv.innerText = "Strong winds. Limit outdoor activities and be cautious of falling debris.";
+    } else {
+        newDiv.innerText = "Unknown Windspeed.";
     }
 };
 
@@ -368,6 +385,8 @@ let avalue = (element) => {
         newDiv.innerText = "Unhealthy. Limit outdoor exposure.";
     } else if (element === 5) {
         newDiv.innerText = "Very unhealthy to hazardous. Stay indoors with air filtration.";
+    } else {
+        newDiv.innerText = "Unknown AQI Condition.";
     }
 };
 

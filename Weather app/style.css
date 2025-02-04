@@ -3,37 +3,41 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333333;
 }
 
 body {
-    background-color: #f0f8ff;
+    background: linear-gradient(to bottom, #87CEEB, #f0f8ff);
     padding: 20px;
+    color: #ffffff;
 }
 
 h1 {
     text-align: center;
-    background-color: #FF8C00;
+    background-color: #1E90FF;
     color: #ffffff;
     padding: 20px 0;
     border-radius: 10px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .main-container {
     display: flex;
     justify-content: center;
     padding: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .container {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     width: 100%;
     max-width: 500px;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     text-align: center;
 }
 
@@ -55,21 +59,23 @@ input, select {
 input:focus, select:focus {
     background-color: #e0f7fa;
     outline: none;
+    border-color: #1E90FF;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #1E90FF;
     color: white;
     padding: 12px 20px;
     font-size: 18px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #388e3c;
+    background-color: #104E8B;
+    transform: scale(1.05);
 }
 
 .lat-lon, .live-location {
@@ -78,10 +84,16 @@ button:hover {
 }
 
 .weather {
+    width: 600px;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 img {
@@ -93,53 +105,61 @@ img {
 }
 
 .weather-data {
-    width: 600px;
-    margin-left: 40px;
+    max-width: 600px;
     font-size: 24px;
-    padding: 10px;
-    background-color: #e3f2fd;
-    border-radius: 8px;
-    /* width: 90%; */
+    padding: 15px;
+    background-color: rgba(173, 216, 230, 0.8);
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .no-sun, .sun {
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .forecast-container {
-    background-color: #90caf9;
+    background-color: rgba(135, 206, 250, 0.8);
     padding: 20px;
     border-radius: 15px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .days {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 120px;
-    text-align: center;
     height: 300px;
+    width: 150px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-    .container, .forecast-container {
-        padding: 15px;
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-    input, select, button {
-        width: 100%;
+    .weather, .container {
+        width: 90%;
+    }
+
+    .no-sun, .sun {
+        flex-direction: column;
+        align-items: center;
     }
 
     img {
@@ -149,5 +169,31 @@ img {
 
     .days {
         width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+        padding: 15px 0;
+    }
+
+    input, select, button {
+        width: 100%;
+    }
+
+    .weather-data {
+        font-size: 18px;
+    }
+
+    img {
+        height: 120px;
+        width: 120px;
+    }
+
+    .days {
+        height: auto;
+        padding: 10px;
     }
 }

@@ -217,11 +217,20 @@ let creatdiv = () => {
     newDiv.style.position = "fixed";
     newDiv.style.top = "50%";
     newDiv.style.left = "50%";
-    newDiv.style.transform = "translate(-50%, -50%)";
+    newDiv.style.transform = "translate(-50%, -50%) scale(0.5)";
     newDiv.style.backgroundColor = "lightblue";
     newDiv.style.padding = "20px";
-    newDiv.style.border = "2px solid black";
+    newDiv.style.border = "2px solid lightblue";
+    newDiv.style.borderRadius = "10px";
     newDiv.style.textAlign = "center";
+    newDiv.style.opacity = "0"; 
+    newDiv.style.transition = "transform 2s, opacity 2s";
+
+    setTimeout(() => {
+        newDiv.style.transform = "translate(-50%, -50%) scale(1)";
+        newDiv.style.opacity = "1"; 
+      }, 100);
+
     document.body.appendChild(newDiv);
 
 };
