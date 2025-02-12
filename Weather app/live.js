@@ -87,10 +87,10 @@ let feature = async(latitude,longitude) => {
             let windspeed = wea_data["wind"]["speed"];
 
             let set_u = wea_data["sys"]["sunset"];
-            let sunset = convertunix(set_u);
+            let sunset = convertUnix(set_u);
 
             let rise_u = wea_data["sys"]["sunrise"];
-            let sunrise = convertunix(rise_u);
+            let sunrise = convertUnix(rise_u);
 
             let forecast = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apikey}`);
             let fore_data = await forecast.json();
@@ -200,11 +200,8 @@ let tempconvert = (kelvin) => {
     return (kelvin - 273.15).toFixed(2);
 };
 
-let convertunix = (unix) => {
-    let dateUTC = new Date(unix * 1000);
-    let istOffset = 5.5 * 60 * 60 * 1000;
-    let dateIST = new Date(dateUTC.getTime() + istOffset);
-    return dateIST.toLocaleString("en-IN");
+const convertUnix = (unix) => {
+    return new Date(unix * 1000).toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 };
 
 let newDiv;
