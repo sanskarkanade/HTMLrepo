@@ -34,7 +34,7 @@ A weather forecast app that provides real-time weather data using the OpenWeathe
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/sanskarkanade/HTMLrepo.git
 
 Open the project folder and run the HTML files directly in your browser.
 
